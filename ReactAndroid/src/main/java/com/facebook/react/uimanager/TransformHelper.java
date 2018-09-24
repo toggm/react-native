@@ -82,6 +82,8 @@ public class TransformHelper {
         MatrixMathHelper.applyTranslate2D(helperMatrix, transform.getDouble(transformType), 0d);
       } else if ("translateY".equals(transformType)) {
         MatrixMathHelper.applyTranslate2D(helperMatrix, 0d, transform.getDouble(transformType));
+      } else if ("translateZ".equals(transformType)) {
+        MatrixMathHelper.applyTranslate3D(helperMatrix, 0d, 0d, transform.getDouble(transformType));
       } else if ("skewX".equals(transformType)) {
         MatrixMathHelper.applySkewX(
           helperMatrix,

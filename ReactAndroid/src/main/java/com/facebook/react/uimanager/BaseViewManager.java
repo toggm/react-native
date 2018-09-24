@@ -42,6 +42,7 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
   private static final String PROP_SCALE_Y = "scaleY";
   private static final String PROP_TRANSLATE_X = "translateX";
   private static final String PROP_TRANSLATE_Y = "translateY";
+  private static final String PROP_TRANSLATE_Z = "translateZ";
 
   private static final int PERSPECTIVE_ARRAY_INVERTED_CAMERA_DISTANCE_INDEX = 2;
   private static final float CAMERA_DISTANCE_NORMALIZATION_MULTIPLIER = 5;
@@ -196,6 +197,12 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
     view.setTranslationY(PixelUtil.toPixelFromDIP(translateY));
   }
 
+  @Deprecated
+  @ReactProp(name = PROP_TRANSLATE_Z, defaultFloat = 0f)
+  public void setTranslateZ(T view, float translateZ) {
+    view.setTranslationZ(PixelUtil.toPixelFromDIP(translateZ));
+  }
+
   @ReactProp(name = PROP_ACCESSIBILITY_LIVE_REGION)
   public void setAccessibilityLiveRegion(T view, String liveRegion) {
     if (Build.VERSION.SDK_INT >= 19) {
@@ -216,6 +223,10 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
         PixelUtil.toPixelFromDIP((float) sMatrixDecompositionContext.translation[0]));
     view.setTranslationY(
         PixelUtil.toPixelFromDIP((float) sMatrixDecompositionContext.translation[1]));
+    if (sMatrixDecompositionContext.translation.length > 2) {
+      view.setTranslationZ(
+        PixelUtil.toPixelFromDIP((float) sMatrixDecompositionContext.translation[2]));
+    }
     view.setRotation((float) sMatrixDecompositionContext.rotationDegrees[2]);
     view.setRotationX((float) sMatrixDecompositionContext.rotationDegrees[0]);
     view.setRotationY((float) sMatrixDecompositionContext.rotationDegrees[1]);
@@ -244,6 +255,7 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
   private static void resetTransformProperty(View view) {
     view.setTranslationX(PixelUtil.toPixelFromDIP(0));
     view.setTranslationY(PixelUtil.toPixelFromDIP(0));
+    view.setTranslationZ(PixelUtil.toPixelFromDIP(0));
     view.setRotation(0);
     view.setRotationX(0);
     view.setRotationY(0);

@@ -95,6 +95,13 @@ function processTransform(
           value,
         ]);
         break;
+      case 'translateZ':
+        _multiplyTransform(result, MatrixMath.reuseTranslate3dCommand, [
+          0,
+          0,
+          value,
+        ]);
+        break;
       case 'skewX':
         _multiplyTransform(result, MatrixMath.reuseSkewXCommand, [
           _convertToRadians(value),
@@ -220,6 +227,7 @@ function _validateTransform(key, value, transformation) {
       break;
     case 'translateX':
     case 'translateY':
+    case 'translateZ':
     case 'scale':
     case 'scaleX':
     case 'scaleY':

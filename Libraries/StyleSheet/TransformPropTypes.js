@@ -69,6 +69,7 @@ const TransformPropTypes = {
       ReactPropTypes.shape({scaleY: ReactPropTypes.number}),
       ReactPropTypes.shape({translateX: ReactPropTypes.number}),
       ReactPropTypes.shape({translateY: ReactPropTypes.number}),
+      ReactPropTypes.shape({translateZ: ReactPropTypes.number}),
       ReactPropTypes.shape({skewX: ReactPropTypes.string}),
       ReactPropTypes.shape({skewY: ReactPropTypes.string}),
     ]),
@@ -101,6 +102,10 @@ const TransformPropTypes = {
     'Use the transform prop instead.',
   ),
   translateY: deprecatedPropType(
+    ReactPropTypes.number,
+    'Use the transform prop instead.',
+  ),
+  translateZ: deprecatedPropType(
     ReactPropTypes.number,
     'Use the transform prop instead.',
   ),

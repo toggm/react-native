@@ -139,11 +139,13 @@ public class ViewRenderingTestCase extends ReactIntegrationTestCase {
 
     float expectedTranslateX = PixelUtil.toPixelFromDIP(20);
     float expectedTranslateY = PixelUtil.toPixelFromDIP(25);
+    float expectedTranslateZ = PixelUtil.toPixelFromDIP(30);
 
     assertEquals(5f, view.getScaleX());
     assertEquals(10f, view.getScaleY());
     assertEquals(15f, view.getRotation());
     assertEquals(expectedTranslateX, view.getTranslationX());
     assertEquals(expectedTranslateY, view.getTranslationY());
+    assertEquals(expectedTranslateZ, view.getTranslationZ());
   }
 }

@@ -23,6 +23,7 @@ describe('processTransform', () => {
         {scale: 0.5},
         {translateX: 10},
         {translateY: 20},
+        {translateZ: 30},
         {rotate: '10deg'},
       ]);
     });

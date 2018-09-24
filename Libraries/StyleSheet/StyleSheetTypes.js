@@ -101,6 +101,7 @@ export type ____TransformStyle_Internal = $ReadOnly<{|
     | {|+scaleY: number | AnimatedNode|}
     | {|+translateX: number | AnimatedNode|}
     | {|+translateY: number | AnimatedNode|}
+    | {|+translateZ: number | AnimatedNode|}
     | {|
         +translate:
           | [number | AnimatedNode, number | AnimatedNode]

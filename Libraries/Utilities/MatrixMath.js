@@ -746,6 +746,7 @@ const MatrixMath = {
       scaleY: scale[1],
       translateX: translation[0],
       translateY: translation[1],
+      translateZ: translation[2],
     };
   },
 };

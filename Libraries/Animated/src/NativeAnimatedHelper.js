@@ -162,11 +162,13 @@ const STYLES_WHITELIST = {
   scaleY: true,
   translateX: true,
   translateY: true,
+  translateZ: true
 };
 
 const TRANSFORM_WHITELIST = {
   translateX: true,
   translateY: true,
+  translateZ: true,
   scale: true,
   scaleX: true,
   scaleY: true,

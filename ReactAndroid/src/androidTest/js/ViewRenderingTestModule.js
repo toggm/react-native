@@ -68,6 +68,7 @@ class TransformSampleApp extends React.Component {
       transform: [
         {translateX: 20},
         {translateY: 25},
+        {translateZ: 30},
         {rotate: '15deg'},
         {scaleX: 5},
         {scaleY: 10},
